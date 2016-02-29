@@ -79,38 +79,36 @@ accounts:
 
 . Make sure the `accounts` and `quotes` microservices are still running
 
-. Run the application and open the url http://localhost:8088/portfolio/johnsmith into your web browser. You should see the following:
+. Run the application and open the url http://localhost:8081/portfolio/johnsmith into your web browser. You should see the following:
 +
 [source,json]
 ----
 {
-   "accountId":null,
-   "name":null,
-   "currentTotalValue":255.4500000000000170530256582424044609069824218750,
-   "purchaseValue":100.00,
-   "sellValue":0,
-   "holdings":{
-      "EMC":{
-         "id":null,
-         "symbol":"EMC",
-         "quantity":10,
-         "purchaseValue":100.00,
-         "sellValue":0,
-         "orders":[
-            {
-               "orderId":1,
-               "accountId":"johndoe",
-               "symbol":"EMC",
-               "orderFee":1.00,
-               "completionDate":1329759342904,
-               "orderType":"BUY",
-               "price":10.00,
-               "quantity":10
-            }
-         ],
-         "currentValue":25.5450000000000017053025658242404460906982421875
-      }
-   }
+	"accountId":"johnsmith",
+	"name":"JohnSmith",
+	"currentTotalValue":-255.4500000000000170530256582424044609069824218750,
+	"purchaseValue":0,
+	"sellValue":100.00,
+	"holdings":{
+		"EMC":{"id":null,
+				"symbol":"EMC",
+				"quantity":-10,
+				"purchaseValue":0,
+				"sellValue":100.00,
+			"orders":
+				[{
+					"orderId":1,
+					"accountId":"johnsmith",
+					"symbol":"EMC",
+					"orderFee":1.00,
+					"completionDate":1481468400000,
+					"orderType":"SELL",
+					"price":10.00,
+					"quantity":10
+					}],
+			"currentValue":25.5450000000000017053025658242404460906982421875
+			}
+	}
 }
 ----
 
@@ -194,8 +192,8 @@ $ cf push
 [source,json]
 ----
 {
-   "accountId":null,
-   "name":null,
+   "accountId":"johnsmith",
+   "name":"JohnSmith",
    "currentTotalValue":255.4500000000000170530256582424044609069824218750,
    "purchaseValue":100.00,
    "sellValue":0,

@@ -54,7 +54,11 @@ public class PortfolioService {
 		 */
 		logger.debug("Getting portfolio for accountId: " + accountId);
 		List<Order> orders = repository.findByAccountId(accountId);
-		return createPortfolio(new Portfolio(), orders);
+        Account account = getAccount(accountId);
+        Portfolio portfolio = new Portfolio();
+        portfolio.setAccountId(accountId);
+        portfolio.setName(account.getFullname());
+		return createPortfolio(portfolio, orders);
 	}
 
 	/**
@@ -79,6 +83,7 @@ public class PortfolioService {
 		// getLatestQuotes in parallel
 		portfolio.getHoldings().values().parallelStream().forEach(holding -> refreshHolding(holding));
 		portfolio.refreshTotalValue();
+
 		logger.debug("Portfolio: " + portfolio);
 		return portfolio;
 	}
@@ -104,7 +109,13 @@ public class PortfolioService {
 		Quote quote = restTemplate.getForObject(quotesUrl + "/quote/{symbol}", Quote.class, symbol);
 		return quote;
 	}
-	
+
+    private Account getAccount(String userid){
+        logger.debug("Fetching Account for userid: " + userid);
+        Account account = restTemplate.getForObject(accountsUrl + "/account?userid={userid}", Account.class, userid);
+        return account;
+    }
+
 	/**
 	 * Add an order to the repository and modify account balance.
 	 * 

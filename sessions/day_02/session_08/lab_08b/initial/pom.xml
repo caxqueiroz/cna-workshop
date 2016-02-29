@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>io.springbox</groupId>
-	<artifactId>lab_08b-springbox-resource-server</artifactId>
+	<artifactId>lab_08b-springtrader-resource-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<description>Lab 08b - Solution: SpringBox Authentication Server</description>
+	<description>Lab 08b - Initial: SpringTrader Resource Server</description>
 
  <parent>
         <groupId>org.springframework.cloud</groupId>
@@ -18,7 +18,7 @@
 
 
 	<properties>
-		<start-class>io.springbox.authserver.SpringboxResourceServerApplication</start-class>
+		<start-class>io.springtrader.authserver.SpringtraderResourceServerApplication</start-class>
 	</properties>
 
 	<dependencies>

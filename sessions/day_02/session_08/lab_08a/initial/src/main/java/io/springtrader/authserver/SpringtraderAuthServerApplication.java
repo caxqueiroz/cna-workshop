@@ -1,4 +1,4 @@
-package io.springbox.authserver;
+package io.springtrader.authserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,9 +8,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @SpringBootApplication
 @RestController
-public class SpringboxAuthServerApplication extends WebMvcConfigurerAdapter {
+public class SpringtraderAuthServerApplication extends WebMvcConfigurerAdapter {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringboxAuthServerApplication.class, args);
+        SpringApplication.run(SpringtraderAuthServerApplication.class, args);
     }
 }

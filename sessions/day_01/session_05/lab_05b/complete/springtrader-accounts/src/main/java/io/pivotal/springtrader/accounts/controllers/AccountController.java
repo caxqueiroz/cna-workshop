@@ -62,12 +62,12 @@ public class AccountController {
 
 	// TODO: do we need this? need to change web accountService to use find()
 	// above.
-	@RequestMapping(value = "/account/", method = RequestMethod.GET)
-	public ResponseEntity<Account> findAccount(@RequestParam(value = "name") final String id) {
+	@RequestMapping(value = "/account", method = RequestMethod.GET)
+	public ResponseEntity<Account> findAccount(@RequestParam(value = "userid") final String userid) {
 
-		logger.info("AccountController.getAccount: id=" + id);
+		logger.info("AccountController.getAccount: userid =" + userid);
 
-		Account accountResponse = accountService.getAccount(id);
+		Account accountResponse = accountService.getAccount(userid);
 		return new ResponseEntity<>(accountResponse, getNoCacheHeaders(), HttpStatus.OK);
 
 	}

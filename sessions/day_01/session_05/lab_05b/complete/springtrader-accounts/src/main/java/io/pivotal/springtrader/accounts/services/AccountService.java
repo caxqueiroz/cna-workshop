@@ -12,10 +12,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * The service in the accountRepository microservice.
@@ -57,24 +54,27 @@ public class AccountService {
 		return account;
 	}
 
+
+
+
 	/**
 	 * Retrieve an account with given id.
 	 * The id here is the unique user id value of the account, ie the username.
 	 * 
-	 * @param id The user id of the account.
+	 * @param userid The user id of the account.
 	 * @return The account object if found or throws a NoRecordsFoundException.
 	 */
-	public Account getAccount(String id) {
+	public Account getAccount(String userid) {
 
-		logger.debug("AccountService.getAccount: id=" + id);
+		logger.debug("AccountService.getAccount: id=" + userid);
 
-		Account account = accountRepository.findByUserid(id);
+		Account account = accountRepository.findByUserid(userid);
 		if (account == null) {
-			logger.warn("AccountService.getAccount: could not find account with id: " + id);
+			logger.warn("AccountService.getAccount: could not find account with id: " + userid);
 			throw new NoRecordsFoundException();
 		}
 
-		logger.info(String.format("AccountService.getAccount - retrieved account with id: %s. Payload is: %s", id, account));
+		logger.info(String.format("AccountService.getAccount - retrieved account with id: %s. Payload is: %s", userid, account));
 
 		return account;
 	}

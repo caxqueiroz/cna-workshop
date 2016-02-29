@@ -1,4 +1,4 @@
-package io.springbox.authserver;
+package io.springtrader.authserver;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,9 +7,9 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = SpringboxAuthServerApplication.class)
+@SpringApplicationConfiguration(classes = SpringtraderAuthServerApplication.class)
 @WebAppConfiguration
-public class SpringboxAuthServerApplicationTests {
+public class SpringtraderAuthServerApplicationTests {
 
 	@Test
 	public void contextLoads() {

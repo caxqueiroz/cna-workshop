@@ -1,4 +1,4 @@
-package io.springbox.authserver;
+package io.springtrader.authserver;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -23,7 +23,7 @@ import java.security.Principal;
 @SpringBootApplication
 @RestController
 @EnableResourceServer
-public class SpringboxAuthServerApplication extends WebMvcConfigurerAdapter {
+public class SpringtraderAuthServerApplication extends WebMvcConfigurerAdapter {
 
     @RequestMapping("/user")
     public Object user(Principal user) {
@@ -33,7 +33,7 @@ public class SpringboxAuthServerApplication extends WebMvcConfigurerAdapter {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringboxAuthServerApplication.class, args);
+        SpringApplication.run(SpringtraderAuthServerApplication.class, args);
     }
 
     @Configuration

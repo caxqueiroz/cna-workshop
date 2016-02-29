@@ -1,4 +1,4 @@
-package io.springbox.authserver;
+package io.springtrader.authserver;
 
 /**
  * Created by vcarvalho on 5/4/15.

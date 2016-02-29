@@ -1,4 +1,4 @@
-package io.springbox.authserver;
+package io.springtrader.authserver;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

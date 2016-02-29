@@ -21,19 +21,28 @@ We will now create an oAuth 2.0 authorization server. Using spring cloud securit
 	<artifactId>spring-security-oauth2</artifactId>
 	<version>2.0.7.RELEASE</version>
 </dependency>
+
+<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+</build>
 ----
 
 
 == Enabling the auth server
 
-. Modify your `/src/main/java/io/pivotal/springbox/authserver/SpringboxAuthServerApplication` class
+. Modify your `/src/main/java/io/pivotal/springtrader/authserver/SpringtraderAuthServerApplication` class
 +
 [source, java]
 ----
 @SpringBootApplication
 @RestController
 @EnableResourceServer <1>
-public class SpringboxAuthServerApplication extends WebMvcConfigurerAdapter {
+public class SpringtraderAuthServerApplication extends WebMvcConfigurerAdapter {
 
     @RequestMapping("/user") <2>
     public Object user(Principal user) {
@@ -43,7 +52,7 @@ public class SpringboxAuthServerApplication extends WebMvcConfigurerAdapter {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringboxAuthServerApplication.class, args);
+        SpringApplication.run(SpringtraderAuthServerApplication.class, args);
     }
 
     @Configuration
@@ -106,7 +115,7 @@ mvn package
 
 . Run the application:
 ----
-java -jar target/lab_08a-springbox-auth-server-0.0.1-SNAPSHOT.jar
+java -jar target/lab_08a-springtrader-auth-server-0.0.1-SNAPSHOT.jar
 ----
 
 
