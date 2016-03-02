@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>io.springbox</groupId>
-	<artifactId>lab_08a-springtrader-auth-server</artifactId>
+	<artifactId>lab_08a-springtrader-auth-server-solution</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<description>Lab 08a - SpringTrader Authentication Server</description>
+	<description>Lab 08a - Solution: SpringTrader Authentication Server</description>
 
        <parent>
 		   <groupId>org.springframework.cloud</groupId>
@@ -45,4 +45,13 @@
          </dependency>
 
 	</dependencies>
+
+	<build>
+                <plugins>
+                        <plugin>
+                                <groupId>org.springframework.boot</groupId>
+                                <artifactId>spring-boot-maven-plugin</artifactId>
+                        </plugin>
+                </plugins>
+        </build>
 </project>
