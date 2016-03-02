@@ -12,7 +12,7 @@ This microservice will provide the _Quotes Service_, which will allow us to sear
 We'll be using the http://dev.markitondemand.com[MarketItOnDemad] API, and we'll model its `Quote and Company as a Stock` concept in this microservice.
 --
 
-NOTE: The completed code for this lab can be found at `$COURSE_HOME/day_01/session_05/lab_05a/initial/springtrader-quotes`.
+NOTE: The completed code for this lab can be found at `$COURSE_HOME/day_01/session_05/lab_05a/complete/springtrader-quotes`.
 
 
 == Exploring springtrader-quotes
