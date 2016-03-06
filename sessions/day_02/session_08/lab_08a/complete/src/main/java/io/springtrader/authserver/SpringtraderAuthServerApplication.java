@@ -28,6 +28,7 @@ public class SpringtraderAuthServerApplication extends WebMvcConfigurerAdapter {
     @RequestMapping("/user")
     public Object user(Principal user) {
         OAuth2Authentication authentication = (OAuth2Authentication) user;
+
         Authentication userAuthentication = authentication.getUserAuthentication();
         return userAuthentication.getPrincipal();
     }
